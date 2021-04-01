@@ -1,0 +1,4 @@
+spleeter
+uvicorn
+fastapi
+typer
