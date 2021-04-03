@@ -1,15 +1,11 @@
-from typing import Optional
+import requests
 
-from fastapi import FastAPI
+from spleeter.separator import Separator
 
-app = FastAPI()
+response = requests.get('http://127.0.0.1:8000/audio/.%2Faudio%2Faudio_example.mp3')
+result = response.json()
+print(result['file_path'])
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
+if __name__ == '__main__':
+    separator = Separator("spleeter:2stems")
+    separator.separate_to_file(result['file_path'], "/sep_output")
