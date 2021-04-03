@@ -29,8 +29,8 @@ def read_root():
 def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
-@app.route("/predict",method = "POST",)
-def predict()
+@app.route("/predict",method = "POST")
+def predict(): 
     # get audio file and save it
     # invoke keyword spotting service 2stems, 4stems, 5stems 
     # make prediction by invoke CLI args    
