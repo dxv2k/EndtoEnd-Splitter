@@ -128,5 +128,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+.vscode/
+
 # Pretrain foler by Spleeter
-pretrained_models/2stems/
+pretrained_models/
+
+#Ignore @VinhDevNguyen Virtual Environment folder
+Spleeter/
