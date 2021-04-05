@@ -7,10 +7,10 @@ Audio splitter using AI
 ``
 
 # Requirements: 
-tensorflow
-ffmpeg
-libsndfile
-spleeter
-uvicorn
-fastapi
-typer
+* tensorflow
+* ffmpeg
+* libsndfile
+* spleeter
+* uvicorn
+* fastapi
+* typer
