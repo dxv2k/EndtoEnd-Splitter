@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Pretrain foler by Spleeter
+pretrained_models/2stems/
