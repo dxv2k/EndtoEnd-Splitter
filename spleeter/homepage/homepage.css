@@ -1,0 +1,77 @@
+* {
+  font-family: "Hammersmith One", sans-serif;
+}
+
+header nav {
+  height: 300px !important;
+  background-color: #242324;
+  padding: 0 100px !important;
+}
+
+header nav a {
+  color: #ff8a86 !important;
+  font-size: 22px;
+  /* padding: 0 25px; */
+}
+
+header nav .nav-item .nav-link {
+  padding: 0 50px !important;
+}
+
+header nav button {
+  border: none;
+  border-radius: 50px;
+  color: #ff8a86;
+  background-color: #29323d;
+  padding: 10px 40px;
+  font-size: 20px;
+  margin-right: 25px;
+}
+
+.body {
+  height: 600px;
+  background-color: #ff8a86;
+}
+
+.body .mot {
+  margin: 0 15px;
+  background-color: #242324;
+  width: 20px;
+  border-radius: 50px;
+  padding: 25px;
+}
+
+.body .text{
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.body .text .wtm{
+    font-size: 56px;
+    font-weight: 900;
+}
+
+.body .text .text-detail{
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+.body .h150{
+    height: 150px;
+}
+.body .h250{
+    height: 250px;
+}
+.body .h300{
+    height: 300px;
+}
+.body .h500{
+    height: 500px;
+}
+
+.footer {
+    background-color: #242324;
+    height: 141px;
+}
