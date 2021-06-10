@@ -1,6 +1,6 @@
 <?php 
 
-include '../config.php';
+include '../utils/config.php';
 
 error_reporting(0);
 
@@ -33,11 +33,11 @@ if (isset($_POST['submit'])) {
 					$result = mysqli_query($conn, $sql);
 					if ($result)
 					{
-						echo "<script>alert('Wow! User Registration Completed.')</script>";
-						$username = "";
+                        $username = "";
 						$email = "";
 						$_POST['password'] = "";
 						$_POST['cpassword'] = "";
+						echo "<script type='text/javascript'>window.alert('Wow! User Registration Completed.'); window.location.href='../login/login.php';</script>";
 					}
                     else {
 						echo "<script>alert('Woops! Something Wrong Went.')</script>";
@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="./register.css?v=<?php echo time(); ?>">
     </head>
 
 <body>

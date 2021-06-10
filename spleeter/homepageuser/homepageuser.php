@@ -25,7 +25,7 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="homepageuser.css">
+    <link rel="stylesheet" href="./homepageuser.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -40,10 +40,10 @@ if (!isset($_SESSION['username'])) {
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../homepageuser/homepageuser.php">Home</a>
+                        <a class="nav-link" href="homepageuser.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Seperator</a>
+                        <a class="nav-link" href="../seperator/seperator.php">Seperator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Mixer</a>
@@ -58,7 +58,6 @@ if (!isset($_SESSION['username'])) {
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                             <li><a href="#">My Files</a></li>
-                            <li><a href="#">CSS</a></li>
                             <li><a href="../utils/logout.php">Log Out</a></li>
                         </ul>
                     </div>
