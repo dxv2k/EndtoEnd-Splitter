@@ -1,0 +1,128 @@
+html,
+body {
+  font-family: "Hammersmith One", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  height: 30%;
+}
+
+header nav {
+  height: 100% !important;
+  background-color: #242324;
+  padding: 0 100px !important;
+}
+
+header nav a {
+  color: #ff8a86 !important;
+  font-size: 22px;
+  /* padding: 0 25px; */
+}
+
+header nav .nav-item .nav-link {
+  padding: 0 50px !important;
+}
+
+header nav .user .user-icon {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 40px;
+  background-color: #ff8a86;
+  color: #29323d;
+}
+
+header nav .user .user-option button{
+    font-size: 20px;
+    color: #ff8a86;
+    background-color: transparent!important;
+    border: none;
+    padding: 0 15px;
+}
+
+header nav .user .user-option button{
+    outline: none!important;
+}
+header nav .user {
+    align-items: center;
+}
+header nav .user .user-option button:hover{
+    color: #fff;
+}
+
+
+header nav .user .user-option .dropdown-menu {
+    background-color: #242324;
+    border: none;
+    text-align: center;
+}
+
+header nav .user .user-option .dropdown-menu a{
+    text-decoration: none;
+}
+
+.body {
+  height: 60%;
+  background-color: #242324;
+  display: table;
+}
+
+.body .top {
+  display: table-row;
+  height: 10%;
+  background-color: #444444;
+}
+
+.body .bottom {
+  display: table-row;
+  height: 90%;
+  background-color: #444444;
+}
+
+.body .body-radiobtn {
+    text-align: left;
+    color: #ff8a86;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+.body .sp-font{
+    color: #ff8a86 !important;
+    font-size: 25px;
+  }
+
+.body .upload-btn{
+    padding-right: 10em;
+}
+
+.body .bottom .body-table{
+    display: none;
+    overflow:scroll;
+    height:30em;
+    width:100%;
+    overflow:auto
+}
+
+.body .bottom table{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+th,td{
+    height: 50px;
+    vertical-align: center;
+    border: 2px solid #ff8a86;
+    color: white;
+}
+
+.footer {
+  background-color: #242324;
+  height: 10%;
+}

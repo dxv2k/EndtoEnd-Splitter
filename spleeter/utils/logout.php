@@ -3,6 +3,6 @@
 session_start();
 session_destroy();
 
-header("Location: ../homepage/homepage.html");
+header("Location: ../homepage.html");
 
 ?>
