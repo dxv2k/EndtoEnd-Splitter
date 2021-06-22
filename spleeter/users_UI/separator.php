@@ -31,22 +31,11 @@ if (!isset($_SESSION['username'])) {
     <!-- jquery for radiobutton swap -->
     <script>
         $(document).ready(function(){
-            $('input[type="radio"]').click(function(){
-                var inputValue = $(this).attr("value");
-                var targetBox = $("." + inputValue);
-                $(".track-list").not(targetBox).hide();
-                $(targetBox).show();
-            });
-
-            // $('.body .seperator .btn-seperator').click(function(){
-            //     var targetBox = $('input[type="radio"]').attr("value");
-            //     $('.' + targetBox + 'div audio source[type="audio/wav"]').change(function(){
-            //         var username = <?php //echo $_SESSION['username']?>;
-            //         var tmp = $('.body .seperator input[type="text"]').val();
-            //         var folder = tmp.split('.', 1);
-            //         var path = '../user_file' + username + '/seperate/' + folder + '/' + $(this).val();
-            //         $(this).attr('src', path);
-            //     });
+            // $('input[type="radio"]').click(function(){
+            //     var inputValue = $(this).attr("value");
+            //     var targetBox = $("." + inputValue);
+            //     $(".track-list").not(targetBox).hide();
+            //     $(targetBox).show();
             // });
             
             $('.body .seperator input[type="file"]').change(function(e){
@@ -74,6 +63,9 @@ if (!isset($_SESSION['username'])) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./separator.php">Separator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./track_list.php">Track List</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./mixer.php">Mixer</a>
@@ -114,197 +106,6 @@ if (!isset($_SESSION['username'])) {
                 </div>
                 <button type="submit" class="body-btn btn-seperator" name="submit" value="upload">Seperator</button>
             </form>
-        </div>
-
-        <!-- 2 stems -->
-        <div class="2stems track-list w-50">
-            <p class="track-list-title">Track list</p>
-            <div class="d-flex ml-2" style="align-items: center;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-3">Original Track</div>
-            </div>
-            <hr class="hr-1">
-            <div class="d-flex ml-5" style="align-items: center;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-4" >Vocals</div>
-                <audio controls class="ml-5">
-                    <source src="#" type="audio/wav" value="vocals.wav">
-                  Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="download-icon ml-5">
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
-            <hr class="hr-2 mr-1">
-            <div class="d-flex ml-5" style="align-items: center;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-3">Instrument</div>
-                <audio controls class="ml-3">
-                    <source src="#" type="audio/wav"  value='accompaniment.wav'>
-                  Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="download-icon ml-5">
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
-            <hr class="hr-2 mr-1">
-        </div>
-
-        <!-- 4 stems-->
-        <div class="4stems track-list w-50">
-            <p class="track-list-title">Track list</p>
-            <div class="d-flex ml-2" style="align-items: center;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-3">Original Track</div>
-            </div>
-            <hr class="hr-1">
-            <div class="d-flex ml-5" style="align-items: center; letter-spacing: 2px;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-4">Vocals</div>
-                <audio controls class="ml-4">
-                    <source src="#" type="audio/mp4">
-                  Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="download-icon ml-5">
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
-            <hr class="hr-2 mr-1">
-            <div class="d-flex ml-5" style="align-items: center;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-4">Drum</div>
-                <audio controls class="ml-5">
-                    <source src="#" type="audio/mp4">
-                  Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="download-icon ml-5">
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
-            <hr class="hr-2 mr-1">
-            <div class="d-flex ml-5" style="align-items: center; letter-spacing: 1px;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-4">Bass</div>
-                <audio controls class="ml-5">
-                    <source src="#" type="audio/mp4">
-                  Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="download-icon ml-5">
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
-            <hr class="hr-2 mr-1">
-            <div class="d-flex ml-5" style="align-items: center; letter-spacing: 2px;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-4">Others</div>
-                <audio controls class="ml-4"> 
-                    <source src="#" type="audio/mp4">
-                  Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="download-icon ml-5">
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
-            <hr class="hr-2 mr-1">
-        </div>
-
-        <!-- 5 stems -->
-        <div class="5stems track-list w-50">
-            <p class="track-list-title">Track list</p>
-            <div class="d-flex ml-2" style="align-items: center;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-3">Original Track</div>
-            </div>
-            <hr class="hr-1">
-            <div class="d-flex ml-5" style="align-items: center; letter-spacing: 2px;">
-                <div class='play-icon'>
-                    <i class="fa fa-play"></i>
-                </div>
-                <div class="tl-font ml-4">Vocals</div>
-                <audio controls class="ml-4">
-                    <source src="#" type="audio/mp4">
-                  Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="download-icon ml-5">
-                    <i class="fa fa-download"></i>
-                </a>
-            </div>
-            <div>
-                <hr class="hr-2 mr-1">
-                <div class="d-flex ml-5" style="align-items: center;">
-                    <div class='play-icon'>
-                        <i class="fa fa-play"></i>
-                    </div>
-                    <div class="tl-font ml-4">Drum</div>
-                    <audio controls class="ml-5"> 
-                        <source src="#" type="audio/mp4">
-                    Your browser does not support the audio element.
-                    </audio>
-                    <a href="#" class="download-icon ml-5">
-                        <i class="fa fa-download"></i>
-                    </a>
-                </div>
-                <hr class="hr-2 mr-1">
-                <div class="d-flex ml-5" style="align-items: center; letter-spacing: 1px;">
-                    <div class='play-icon'>
-                        <i class="fa fa-play"></i>
-                    </div>
-                    <div class="tl-font ml-4">Bass</div>
-                    <audio controls class="ml-5">
-                        <source src="#" type="audio/mp4">
-                    Your browser does not support the audio element.
-                    </audio>
-                    <a href="#" class="download-icon ml-5">
-                        <i class="fa fa-download"></i>
-                    </a>
-                </div>
-                <hr class="hr-2 mr-1">
-                <div class="d-flex ml-5" style="align-items: center;">
-                    <div class='play-icon'>
-                        <i class="fa fa-play"></i>
-                    </div>
-                    <div class="tl-font ml-4">Piano</div>
-                    <audio controls class="ml-5">
-                        <source src="#" type="audio/mp4">
-                    Your browser does not support the audio element.
-                    </audio>
-                    <a href="#" class="download-icon ml-5">
-                        <i class="fa fa-download"></i>
-                    </a>
-                </div>
-                <hr class="hr-2 mr-1">
-                <div class="d-flex ml-5" style="align-items: center; letter-spacing: 2px;">
-                    <div class='play-icon'>
-                        <i class="fa fa-play"></i>
-                    </div>
-                    <div class="tl-font ml-4">Others</div>
-                    <audio controls class="ml-4">    
-                        <source src="#" type="audio/mp4">
-                    Your browser does not support the audio element.
-                    </audio>
-                    <a href="#" class="download-icon ml-5">
-                        <i class="fa fa-download"></i>
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
     <section class="footer">

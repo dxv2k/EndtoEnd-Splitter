@@ -71,48 +71,73 @@ header nav .user .user-option .dropdown-menu a{
   display: table;
 }
 
-.body .top {
-  display: table-row;
-  height: 10%;
+.body .tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #444444;
+  width: 15%;
+  height: 100%;
+}
+
+.body .tab button {
+  display: block;
+  background-color: #444444;
+  color: #ff8a86;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 25px;
+}
+
+/* Change background color of buttons on hover */
+.body .tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.body .tab button.active {
+  background-color: #ddd;
+}
+
+
+.body .tabcontent {
+  width: 85%;
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  border-left: none;
+  height: 100%;
   background-color: #444444;
 }
 
-.body .bottom {
-  display: table-row;
-  height: 90%;
-  background-color: #444444;
+.body .tabcontent .table-contain{
+  overflow:scroll;
+  height:28em;
+  overflow:auto;
+  margin-top: 4.5em;
+  margin-bottom: 3em;
+  display: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
 }
 
-.body .body-radiobtn {
-    text-align: left;
-    color: #ff8a86;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-.body .sp-font{
-    color: #ff8a86 !important;
-    font-size: 25px;
-  }
-
-.body .upload-btn{
-    padding-right: 10em;
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-.body .bottom .body-table{
-    display: none;
-    overflow:scroll;
-    height:30em;
-    width:100%;
-    overflow:auto
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-.body .bottom table{
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5em;
-    margin-bottom: 5em;
+.body .tabcontent table{
+    width: 100%;
 }
 
 th,td{

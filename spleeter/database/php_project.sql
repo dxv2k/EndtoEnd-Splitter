@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 08:22 AM
+-- Generation Time: Jun 22, 2021 at 06:44 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -65,11 +65,11 @@ CREATE TABLE `processed_folders` (
 --
 
 INSERT INTO `processed_folders` (`id`, `folder_name`, `parent_file_id`, `user_id`, `stem_option`, `uploaded_on`, `download`) VALUES
-(1, 'trungtam', 1, 1, '2stems', '2021-06-13 19:24:33', '../user_files/admin/separate/2stems//trungtam'),
-(2, 'trungtam', 1, 1, '4stems', '2021-06-13 19:43:01', '../user_files/admin/separate/4stems//trungtam'),
-(3, 'trungtam', 1, 2, '5stems', '2021-06-15 13:06:23', '../user_files/admin1/separate/5stems//trungtam'),
-(4, 'trungtam', 1, 2, '2stems', '2021-06-15 13:09:00', '../user_files/admin1/separate/2stems//trungtam'),
-(5, 'trungtam', 1, 2, '4stems', '2021-06-15 13:18:05', '../user_files/admin1/separate/4stems//trungtam');
+(1, 'trungtam', 1, 1, '2stems', '2021-06-13 19:24:33', '../user_files/admin/separate/2stems/trungtam'),
+(2, 'trungtam', 1, 1, '4stems', '2021-06-13 19:43:01', '../user_files/admin/separate/4stems/trungtam'),
+(3, 'trungtam', 1, 2, '5stems', '2021-06-15 13:06:23', '../user_files/admin1/separate/5stems/trungtam'),
+(4, 'trungtam', 1, 2, '2stems', '2021-06-15 13:09:00', '../user_files/admin1/separate/2stems/trungtam'),
+(5, 'trungtam', 1, 2, '4stems', '2021-06-15 13:18:05', '../user_files/admin1/separate/4stems/trungtam');
 
 -- --------------------------------------------------------
 

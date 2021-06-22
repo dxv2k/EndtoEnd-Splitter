@@ -34,10 +34,12 @@ if (!isset($_SESSION['username'])) {
 
         <script>
             $(document).ready(function(){
-                $('input[type="radio"]').click(function(){
+                $('.tablinks').click(function(){
                     var inputValue = $(this).attr("value");
                     var targetBox = $("." + inputValue);
-                    $(".body-table").not(targetBox).hide();
+                    $('.tablinks').removeClass('active');
+                    $(this).addClass("active");
+                    $(".table-contain").not(targetBox).hide();
                     $(targetBox).show();
                 });
             });
@@ -62,6 +64,9 @@ if (!isset($_SESSION['username'])) {
                             <a class="nav-link" href="./separator.php">Separator</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="./track_list.php">Track List</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="./mixer.php">Mixer</a>
                         </li>
                     </ul>
@@ -82,16 +87,20 @@ if (!isset($_SESSION['username'])) {
             </nav>
         </header>
         <section class="body row w-100 m-0">
-            <div class="top">
+            <!-- <div class="top">
                 <div class="body-radiobtn d-flex">
                     <label class="sp-font upload-btn"><input type="radio" name="user-table" value="upload">Uploaded</label>
                     <label class="sp-font separate-btn"><input type="radio" name="user-table" value="separate">Separated</label>
                 </div>
+            </div> -->
+            <div class="tab">
+                <button class="tablinks" value="upload">Uploaded</button>
+                <button class="tablinks" value="separate">Separated</button>
             </div>
-            <hr style="border: 1px solid white;">
-            <div class="bottom">
-
-                <div class="upload body-table">
+            <!-- <hr style="border: 1px solid white;"> -->
+            <!-- <div class="bottom"> -->
+            <div class="tabcontent">
+                <div class="upload table-contain">
                     <table>
                         <thead>
                             <th>ID</th>
@@ -194,14 +203,15 @@ if (!isset($_SESSION['username'])) {
                     </table>
                 </div>
 
-                <div class="separate body-table">
+                <div class="separate table-contain">
                     <table>
                         <thead>
                             <th>ID</th>
                             <th>Folder Name</th>
                             <th>Stem Option</th>
                             <th>Upload On</th>
-                            <th>Download</th>
+                            <th>Listen</th>
+                            <th>Download Zip</th>
                             <th>Remove</th>
                         </thead>
                         <tbody>
@@ -215,8 +225,9 @@ if (!isset($_SESSION['username'])) {
                                 <td><?php echo $files['folder_name']; ?> </td>
                                 <td><?php echo $files['stem_option']; ?> </td>
                                 <td><?php echo $files['uploaded_on']; ?> </td>
+                                <td><a href='track_list.php?folder_path_listen=<?php echo $files['download'];?>&option=<?php echo $files['stem_option']; ?>'>Listen</a></td>
                                 <td><a href='my_files.php?folder_path_download=<?php echo $files['download'];?>&folder_name_download=<?php echo $files['folder_name'].'_'.$files['stem_option'];?>'>Download</a></td>
-                                <td><a href='my_files.php?folder_path_remove=<?php echo $files['folder_name']; ?>&folder_id_remove=<?php echo $files['id']; ?>' style="color: red;">Remove</a></td>
+                                <td><a href='my_files.php?folder_path_remove=<?php echo $files['download']; ?>&folder_id_remove=<?php echo $files['id']; ?>' style="color: red;">Remove</a></td>
                             </tr>
                             <?php
                                 }
@@ -227,6 +238,16 @@ if (!isset($_SESSION['username'])) {
                                 <td>Dummy</td>
                                 <td>Dummy</td>
                                 <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
+                                <td><a href='#'>Download</a></td>
+                                <td><a href='#' style="color: red;">Remove</a></td>
+                            </tr>
+                            <tr>
+                                <td>Dummy</td>
+                                <td>Dummy</td>
+                                <td>Dummy</td>
+                                <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
                                 <td><a href='#'>Download</a></td>
                                 <td><a href='#' style="color: red;">Remove</a></td>
                             </tr>
@@ -236,6 +257,7 @@ if (!isset($_SESSION['username'])) {
                                 <td>Dummy</td>
                                 <td>Dummy</td>
                                 <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
                                 <td><a href='#'>Download</a></td>
                                 <td><a href='#' style="color: red;">Remove</a></td>
                             </tr>
@@ -245,6 +267,7 @@ if (!isset($_SESSION['username'])) {
                                 <td>Dummy</td>
                                 <td>Dummy</td>
                                 <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
                                 <td><a href='#'>Download</a></td>
                                 <td><a href='#' style="color: red;">Remove</a></td>
                             </tr>
@@ -254,6 +277,7 @@ if (!isset($_SESSION['username'])) {
                                 <td>Dummy</td>
                                 <td>Dummy</td>
                                 <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
                                 <td><a href='#'>Download</a></td>
                                 <td><a href='#' style="color: red;">Remove</a></td>
                             </tr>
@@ -263,6 +287,7 @@ if (!isset($_SESSION['username'])) {
                                 <td>Dummy</td>
                                 <td>Dummy</td>
                                 <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
                                 <td><a href='#'>Download</a></td>
                                 <td><a href='#' style="color: red;">Remove</a></td>
                             </tr>
@@ -272,6 +297,7 @@ if (!isset($_SESSION['username'])) {
                                 <td>Dummy</td>
                                 <td>Dummy</td>
                                 <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
                                 <td><a href='#'>Download</a></td>
                                 <td><a href='#' style="color: red;">Remove</a></td>
                             </tr>
@@ -281,24 +307,16 @@ if (!isset($_SESSION['username'])) {
                                 <td>Dummy</td>
                                 <td>Dummy</td>
                                 <td>Dummy</td>
-                                <td><a href='#'>Download</a></td>
-                                <td><a href='#' style="color: red;">Remove</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dummy</td>
-                                <td>Dummy</td>
-                                <td>Dummy</td>
-                                <td>Dummy</td>
+                                <td><a href='#'>Listen</a></td>
                                 <td><a href='#'>Download</a></td>
                                 <td><a href='#' style="color: red;">Remove</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
-        </section>  
+        </section>
+
         <section class="footer">
         </section>
 

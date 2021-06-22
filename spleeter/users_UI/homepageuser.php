@@ -46,6 +46,9 @@ if (!isset($_SESSION['username'])) {
                         <a class="nav-link" href="./separator.php">Separator</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="./track_list.php">Track List</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="./mixer.php">Mixer</a>
                     </li>
                 </ul>
